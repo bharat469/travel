@@ -5,10 +5,13 @@ import {
   View,
   Keyboard,
 } from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import ViewWrapper from '../../components/viewWrapper';
 import HeaderComp from '../../components/headerComp';
-import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {
+  heightPercentageToDP as hp,
+  widthPercentageToDP as wp,
+} from 'react-native-responsive-screen';
 import {paraSize} from '../../constant/fontSize';
 import {FontColor} from '../../constant/colors';
 import InputComp from '../../components/inputComp';
@@ -19,9 +22,9 @@ import {RegisterAction} from '../../redux/actions/AuthAction';
 
 const Register: React.FC = ({navigation}: any) => {
   const {control, handleSubmit} = useForm<FormData>();
-  const dispatch = useDispatch();
-  const RegisterData = (data: any) => {
-    console.log(data);
+  const dispatch: any = useDispatch();
+
+  const RegisterData = async (data: any) => {
     dispatch(RegisterAction(data));
   };
 
@@ -97,6 +100,7 @@ const styles = StyleSheet.create({
     fontSize: paraSize,
     color: FontColor,
     fontWeight: '600',
+    width: wp('80%'),
   },
   inputViewBox: {
     top: hp('7%'),

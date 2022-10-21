@@ -15,6 +15,8 @@ import {FontColor, ParaColor} from '../../constant/colors';
 import {useForm} from 'react-hook-form';
 import InputComp from '../../components/inputComp';
 import ButtonComp from '../../components/buttonComp';
+import {useDispatch} from 'react-redux';
+import {SignInAction} from '../../redux/actions/AuthAction';
 
 const LoginScreen: React.FC = ({navigation}: any) => {
   const {
@@ -23,9 +25,11 @@ const LoginScreen: React.FC = ({navigation}: any) => {
     formState: {errors},
   } = useForm<FormData>();
   console.log(errors);
+  const dispatch: any = useDispatch();
 
   const SignInFunction = (data: any) => {
-    console.log(data);
+    // console.log(data);
+    dispatch(SignInAction(data));
   };
 
   return (

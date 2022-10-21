@@ -2,7 +2,7 @@ import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
   data: null,
-  token: '',
+  token: null,
 };
 
 export const AuthSlice = createSlice({
@@ -12,7 +12,10 @@ export const AuthSlice = createSlice({
     LoginData(state, action) {
       state.data = action.payload;
     },
+    SaveToken(state, action) {
+      state.token = action.payload;
+    },
   },
 });
 
-export const AuthAction = AuthSlice.actions;
+export const AuthActions = AuthSlice.actions;

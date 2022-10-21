@@ -1,7 +1,8 @@
 import React from 'react';
 import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
 import {Provider} from 'react-redux';
-import AuthNavi from './src/navigation/AuthNavigation';
+
+import Navigation from './src/navigation/navigation';
 import store from './src/redux/store/store';
 
 const App: React.FC = () => {
@@ -9,7 +10,7 @@ const App: React.FC = () => {
     <Provider store={store}>
       <SafeAreaView style={styles.allApp}>
         <StatusBar />
-        <AuthNavi />
+        <Navigation />
       </SafeAreaView>
     </Provider>
   );
