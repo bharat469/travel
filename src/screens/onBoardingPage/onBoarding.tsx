@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
   btnText: {
     fontSize: paraSize,
     fontWeight: '600',
+    color: '#000',
   },
   SignBtn: {
     backgroundColor: BtnSecond,

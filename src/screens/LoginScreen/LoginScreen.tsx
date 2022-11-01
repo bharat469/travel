@@ -17,6 +17,8 @@ import InputComp from '../../components/inputComp';
 import ButtonComp from '../../components/buttonComp';
 import {useDispatch} from 'react-redux';
 import {SignInAction} from '../../redux/actions/AuthAction';
+import Entypo from 'react-native-vector-icons/Entypo';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const LoginScreen: React.FC = ({navigation}: any) => {
   const {
@@ -50,6 +52,7 @@ const LoginScreen: React.FC = ({navigation}: any) => {
               name="EmailSignIn"
               keyBoard={'email-address'}
               secureKey={false}
+              icon={<Ionicons name="mail" size={24} color="#fff" />}
               rules={{
                 required: 'Email is Invalid',
                 pattern: {
@@ -64,6 +67,7 @@ const LoginScreen: React.FC = ({navigation}: any) => {
               control={control}
               name="Password"
               keyBoard={'email-address'}
+              icon={<Entypo name="lock" size={24} color="#fff" />}
               secureKey={true}
               rules={{
                 required: 'Password is required',

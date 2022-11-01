@@ -33,5 +33,6 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: paraSize,
+    color:'#000'
   },
 });

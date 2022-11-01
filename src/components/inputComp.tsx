@@ -14,6 +14,7 @@ interface inputProps {
   name: string;
   placeHolder: string;
   rules: {};
+  icon: any;
 }
 
 const InputComp = (props: inputProps) => {
@@ -29,16 +30,19 @@ const InputComp = (props: inputProps) => {
               styles.containerStyle,
               {borderColor: error ? 'red' : FontColor},
             ]}>
-            <TextInput
-              placeholder={props.placeHolder}
-              value={value}
-              onChangeText={onChange}
-              onBlur={onBlur}
-              keyboardType={props.keyBoard}
-              style={styles.textInputStyle}
-              secureTextEntry={props.secureKey}
-              placeholderTextColor={FontColor}
-            />
+            <View style={styles.InputStyle}>
+              <View style={{padding: 12}}>{props.icon}</View>
+              <TextInput
+                placeholder={props.placeHolder}
+                value={value}
+                onChangeText={onChange}
+                onBlur={onBlur}
+                keyboardType={props.keyBoard}
+                style={styles.textInputStyle}
+                secureTextEntry={props.secureKey}
+                placeholderTextColor={FontColor}
+              />
+            </View>
             {error && (
               <Text
                 style={{
@@ -72,5 +76,11 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     borderColor: FontColor,
     margin: 12,
+    
   },
+  InputStyle: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  }
 });
